@@ -268,3 +268,26 @@
   new PureCounter();
 
 })()
+
+
+function calculateAge(dob) {
+  const dobDate = new Date(dob);
+  const now = new Date();
+  
+  let age = now.getFullYear() - dobDate.getFullYear();
+  const monthDiff = now.getMonth() - dobDate.getMonth();
+  const dayDiff = now.getDate() - dobDate.getDate();
+
+  // If current date is before the birth date this year, subtract 1 from the age
+  if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+      age--;
+  }
+
+  return age;
+}
+
+// Your date of birth
+const dob = '2010-03-26';
+
+// Calculate age and set it to the span with id 'age'
+document.getElementById('age').textContent = calculateAge(dob);
