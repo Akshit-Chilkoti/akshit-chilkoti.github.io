@@ -291,3 +291,7 @@ const dob = '2010-03-26';
 
 // Calculate age and set it to the span with id 'age'
 document.getElementById('age').textContent = calculateAge(dob);
+
+document.querySelector('.email').addEventListener('click', function() {
+  window.open('mailto:akshitchilkoti@outlook.com', '_blank');
+});

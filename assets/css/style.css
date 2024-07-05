@@ -1050,6 +1050,7 @@ section {
 .contact .info .email,
 .contact .info .phone {
   margin-top: 40px;
+  cursor: pointer;
 }
 
 .contact .info .email:hover i,
@@ -1381,3 +1382,9 @@ section {
   border-color: hsl(var(--fc-error-hsl));
   box-shadow: 0px 0px 0px 3px hsla(var(--fc-error-hsl), 12%);
 }
+
+#linktree {
+  height: 20px;
+  width: auto;
+}
+
