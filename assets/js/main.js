@@ -299,7 +299,7 @@ document.querySelector('.email').addEventListener('click', function() {
 
 
 // Fetch and load the achievements.docx file
-fetch('Achievements.docx')
+fetch('assets/files/Achievements.docx')
     .then(response => response.arrayBuffer())
     .then(arrayBuffer => {
          return mammoth.convertToHtml({ arrayBuffer: arrayBuffer });
