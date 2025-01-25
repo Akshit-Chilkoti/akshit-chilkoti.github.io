@@ -8,7 +8,7 @@
   <title>Akshit Chilkoti</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script>
   <!-- Favicons -->
   <link href="assets/img/Me_ico.png" rel="icon">
   <link href="assets/img/Me_ico.png" rel="apple-touch-icon">
@@ -477,7 +477,24 @@
 
       <div class="section-title">
         <h2>Achievements</h2>
-        <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
+        <p><div id="output"></div>
+
+          <script>
+              // Fetch and load the achievements.docx file
+              fetch('Achievements.docx')
+                  .then(response => response.arrayBuffer())
+                  .then(arrayBuffer => {
+                      return mammoth.convertToHtml({ arrayBuffer: arrayBuffer });
+                  })
+                  .then(result => {
+                      // Display the converted HTML content
+                      document.getElementById('output').innerHTML = result.value;
+                  })
+                  .catch(err => {
+                      console.error('Error loading or converting the document:', err);
+                      document.getElementById('output').textContent = 'Failed to load the document.';
+                  });
+          </script></p> 
       </div>
 
 
