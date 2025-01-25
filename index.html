@@ -479,22 +479,7 @@
         <h2>Achievements</h2>
         <p><div id="output"></div>
 
-          <script>
-              // Fetch and load the achievements.docx file
-              fetch('Achievements.docx')
-                  .then(response => response.arrayBuffer())
-                  .then(arrayBuffer => {
-                      return mammoth.convertToHtml({ arrayBuffer: arrayBuffer });
-                  })
-                  .then(result => {
-                      // Display the converted HTML content
-                      document.getElementById('output').innerHTML = result.value;
-                  })
-                  .catch(err => {
-                      console.error('Error loading or converting the document:', err);
-                      document.getElementById('output').textContent = 'Failed to load the document.';
-                  });
-          </script></p> 
+          </p> 
       </div>
 
 

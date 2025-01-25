@@ -295,3 +295,21 @@ document.getElementById('age').textContent = calculateAge(dob);
 document.querySelector('.email').addEventListener('click', function() {
   window.open('mailto:akshitchilkoti@outlook.com', '_blank');
 });
+
+
+
+// Fetch and load the achievements.docx file
+fetch('Achievements.docx')
+    .then(response => response.arrayBuffer())
+    .then(arrayBuffer => {
+         return mammoth.convertToHtml({ arrayBuffer: arrayBuffer });
+      })
+    .then(result => {
+   // Display the converted HTML content
+        document.getElementById('output').innerHTML = result.value;
+      })
+    .catch(err => {
+        console.error('Error loading or converting the document:', err);
+          document.getElementById('output').textContent = 'Failed to load the document.';
+        });
+          
